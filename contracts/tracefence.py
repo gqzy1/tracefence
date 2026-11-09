@@ -213,3 +213,4 @@ class TraceFence(gl.Contract):
         r["published"] = True
         self.audits[key] = packed(r)
         return r["commitment"]
+
