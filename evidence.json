@@ -1,0 +1,95 @@
+{
+  "contract": "TraceFence",
+  "network": "Stable Studionet",
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "address": "0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348",
+  "explorer": "https://explorer-studio.genlayer.com/address/0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348",
+  "owner": "0xedf70B8A7588A72e236f47E39AC4A94A67b76e68",
+  "repository": "https://github.com/gqzy1/tracefence",
+  "source": "contracts/tracefence.py",
+  "source_sha256": "c3d9d211c2f1ae66c95e338b59237c17e212249559cafd8e826966f077f506e6",
+  "deploy_tx": "0xf43d2b0d0cc6224908527095a886a1954f7ce3d78379fbb69a34ceb3a3682da1",
+  "transactions": [
+    {
+      "label": "deploy",
+      "hash": "0xf43d2b0d0cc6224908527095a886a1954f7ce3d78379fbb69a34ceb3a3682da1",
+      "method": "deploy",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "votes": {
+        "agree": 3,
+        "disagree": 0,
+        "idle": 2
+      }
+    },
+    {
+      "label": "clean",
+      "hash": "0xb12c1eca9b7e320259f66f0dc368ca087491fa65f305dcb10673a5346d5fff55",
+      "method": "audit",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "votes": {
+        "agree": 3,
+        "disagree": 1,
+        "idle": 1
+      }
+    },
+    {
+      "label": "branch",
+      "hash": "0xf1c3d131356a4069a2b5828526f1d5fa2a4a963cf5d756dba558445af2f318b0",
+      "method": "audit",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "votes": {
+        "agree": 3,
+        "disagree": 1,
+        "idle": 1
+      }
+    },
+    {
+      "label": "publish",
+      "hash": "0x1ec0853f63ee3af36e4d3db5c024c141bbfeb11dabf1a2542dd021d73b5f3e63",
+      "method": "publish",
+      "status": "FINALIZED",
+      "result": "MAJORITY_AGREE",
+      "execution": "SUCCESS",
+      "votes": {
+        "agree": 3,
+        "disagree": 0,
+        "idle": 2
+      }
+    }
+  ],
+  "reads": {
+    "clean": {
+      "decision": "CLEAR",
+      "published": true,
+      "commitment": "43b641e15418f566e571c5515b95189fcdc84a6855cf679c572656eb3f8c2bc3"
+    },
+    "branch": {
+      "decision": "LEAK",
+      "published": false,
+      "commitment": "d9574c0ca7c24d3515cffcc4d95a69c47a2f142186d26f6e6ac1bf3c1a3fec72",
+      "violations": [
+        {
+          "label": 0,
+          "path": [
+            0,
+            2
+          ],
+          "sink": 2
+        }
+      ]
+    }
+  },
+  "local_checks": {
+    "unit_tests": 12,
+    "result": "PASS",
+    "scope": "scripted host and model fixtures; no network consensus"
+  },
+  "verification": "npm install && npm run read (read-only: verifies deployed source, transactions, votes, call bindings and finalized state; sends no writes)"
+}

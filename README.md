@@ -57,6 +57,8 @@ A deployment claim needs the exact source digest, successful finalized deploymen
 
 Contract: [`0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348`](https://explorer-studio.genlayer.com/address/0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348). Four real transactions are FINALIZED / MAJORITY_AGREE / SUCCESS. The CLEAR audit is published; the CONTROL-leak audit retains its witness and is not published. [Network observations and limits](NETWORK.md).
 
+Evidence summary: [evidence.json](evidence.json).
+
 To inspect existing evidence without sending a transaction:
 
 ```sh
