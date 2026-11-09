@@ -1,0 +1,32 @@
+{
+  "labels": [
+    "restricted"
+  ],
+  "nodes": [
+    {
+      "name": "secret",
+      "source_labels": [
+        0
+      ],
+      "operation": ""
+    },
+    {
+      "name": "public",
+      "source_labels": [],
+      "operation": ""
+    },
+    {
+      "name": "out",
+      "source_labels": [],
+      "operation": "Use only public; ignore secret. No other data or control input."
+    }
+  ],
+  "sinks": [
+    {
+      "node": 2,
+      "forbid": [
+        0
+      ]
+    }
+  ]
+}
