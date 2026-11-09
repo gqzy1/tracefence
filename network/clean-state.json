@@ -1,0 +1,74 @@
+{
+  "commitment": "43b641e15418f566e571c5515b95189fcdc84a6855cf679c572656eb3f8c2bc3",
+  "name": "clean",
+  "observed": {
+    "rows": [
+      {
+        "links": [
+          {
+            "kind": "NONE",
+            "quote": ""
+          },
+          {
+            "kind": "DATA",
+            "quote": "copy of public"
+          }
+        ],
+        "node": 2
+      }
+    ]
+  },
+  "owner": "0xedf70b8a7588a72e236f47e39ac4a94a67b76e68",
+  "plan": {
+    "labels": [
+      "restricted"
+    ],
+    "nodes": [
+      {
+        "name": "secret",
+        "operation": "",
+        "source_labels": [
+          0
+        ]
+      },
+      {
+        "name": "public",
+        "operation": "",
+        "source_labels": []
+      },
+      {
+        "name": "out",
+        "operation": "Output a verbatim copy of public. Do not read or branch on secret. These are all data and control inputs.",
+        "source_labels": []
+      }
+    ],
+    "sinks": [
+      {
+        "forbid": [
+          0
+        ],
+        "node": 2
+      }
+    ]
+  },
+  "proof": {
+    "decision": "CLEAR",
+    "definite_labels": [
+      [
+        0
+      ],
+      [],
+      []
+    ],
+    "possible_labels": [
+      [
+        0
+      ],
+      [],
+      []
+    ],
+    "unresolved": [],
+    "violations": []
+  },
+  "published": true
+}

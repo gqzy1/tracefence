@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "scope": "scripted host and model fixtures; no network consensus",
+  "unit_tests": 12,
+  "unit_result": "PASS",
+  "exhaustive_map_pairs": null,
+  "linter": "genvm-linter 0.11.0",
+  "lint_ok": true,
+  "lint_warning": "I200: newer runner available; pinned runner compiled successfully in stable Studio"
+}

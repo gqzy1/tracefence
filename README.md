@@ -2,7 +2,7 @@
 
 **Where can restricted information reach an output?**
 
-TraceFence specifies a bounded information-flow audit for declared data-processing pipelines. A public constant can still reveal a private fact when that fact controls whether the constant is emitted. The analysis therefore distinguishes value dependencies from control dependencies.
+TraceFence implements a bounded information-flow audit for declared data-processing pipelines. A public constant can still reveal a private fact when that fact controls whether the constant is emitted. The analysis therefore distinguishes value dependencies from control dependencies.
 
 ## The model
 
@@ -24,7 +24,7 @@ Positive relationships require an exact excerpt from the corresponding operation
 
 ## Independent interpretation
 
-The proposed GenLayer boundary uses a custom `run_nondet_unsafe` validator. The leader interprets the original plan. Every validator independently interprets the same plan and compares the complete ordered relationship vector, including relationships that do not change the overall outcome. Quotes may differ, but each positive quote must occur in its own operation.
+The GenLayer boundary uses a custom `run_nondet_unsafe` validator. The leader interprets the original plan. Every validator independently interprets the same plan and compares the complete ordered relationship vector, including relationships that do not change the overall outcome. Quotes may differ, but each positive quote must occur in its own operation.
 
 An exception, invalid model response or validator disagreement must leave the audit absent. These failures must not be converted into UNKNOWN or a stored REVIEW result.
 
@@ -39,11 +39,11 @@ A forbidden label on a definite path produces LEAK and a concrete node path. A f
 
 An immutable audit binds the owner, name, exact plan, accepted interpretation and computed report with SHA-256. A separate owner-authorized publication call is permitted only for CLEAR and the exact expected commitment. Publication does not execute the described pipeline.
 
-## Intended integration
+## Integration
 
 The contract interface is `audit(name, payload)`, `inspect(owner, name)`, `publish(name, expected_commitment)` and `protocol()`. Audit names are scoped to the signing address. An existing name cannot be replaced. Each owner has a maximum of twelve audits.
 
-The intended deployment target is Stable Studionet, chain **61999**, RPC **https://studio.genlayer.com/api**, with full consensus and zero attached value.
+The deployment target is Stable Studionet, chain **61999**, RPC **https://studio.genlayer.com/api**, with full consensus and zero attached value.
 
 ## Scope of assurance
 
@@ -55,4 +55,21 @@ The model is acyclic and bounded. It excludes implicit external sources, timing 
 
 A deployment claim needs the exact source digest, successful finalized deployment receipt, accepted consensus receipts and finalized state readback. Local fixture tests and schema compilation must be identified separately from live consensus.
 
-No verified deployment, contract address or live consensus result is recorded in this repository.
+Contract: [`0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348`](https://explorer-studio.genlayer.com/address/0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348). Four real transactions are FINALIZED / MAJORITY_AGREE / SUCCESS. The CLEAR audit is published; the CONTROL-leak audit retains its witness and is not published. [Network observations and limits](NETWORK.md).
+
+To inspect existing evidence without sending a transaction:
+
+```sh
+npm install
+npm run read
+```
+
+To run the twelve scripted-host checks:
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+The complete deployable source is [contracts/tracefence.py](contracts/tracefence.py). It takes no constructor arguments. An input example is [examples/public-only.json](examples/public-only.json); recorded live inputs remain in the two saved network states. Local checks are explained in [TESTING.md](TESTING.md).
+
+SHA-256 commits exact bytes; it does not prove the semantic interpretation is objectively correct.

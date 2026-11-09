@@ -1,0 +1,13 @@
+{
+  "name": "tracefence",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "read": "node read.mjs"
+  },
+  "dependencies": {
+    "genlayer-js": "1.1.8",
+    "viem": "2.57.8"
+  }
+}

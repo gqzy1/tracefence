@@ -1,0 +1,55 @@
+{
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "address": "0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348",
+  "owner": "0xedf70B8A7588A72e236f47E39AC4A94A67b76e68",
+  "deploy_tx": "0xf43d2b0d0cc6224908527095a886a1954f7ce3d78379fbb69a34ceb3a3682da1",
+  "source_sha256": "c3d9d211c2f1ae66c95e338b59237c17e212249559cafd8e826966f077f506e6",
+  "source": "contracts/tracefence.py",
+  "view": "inspect",
+  "transactions": [
+    {
+      "label": "deploy",
+      "hash": "0xf43d2b0d0cc6224908527095a886a1954f7ce3d78379fbb69a34ceb3a3682da1",
+      "method": "deploy",
+      "args": []
+    },
+    {
+      "label": "clean",
+      "hash": "0xb12c1eca9b7e320259f66f0dc368ca087491fa65f305dcb10673a5346d5fff55",
+      "method": "audit",
+      "args": [
+        "clean",
+        "{\"labels\":[\"restricted\"],\"nodes\":[{\"name\":\"secret\",\"source_labels\":[0],\"operation\":\"\"},{\"name\":\"public\",\"source_labels\":[],\"operation\":\"\"},{\"name\":\"out\",\"source_labels\":[],\"operation\":\"Output a verbatim copy of public. Do not read or branch on secret. These are all data and control inputs.\"}],\"sinks\":[{\"node\":2,\"forbid\":[0]}]}"
+      ]
+    },
+    {
+      "label": "branch",
+      "hash": "0xf1c3d131356a4069a2b5828526f1d5fa2a4a963cf5d756dba558445af2f318b0",
+      "method": "audit",
+      "args": [
+        "branch",
+        "{\"labels\":[\"restricted\"],\"nodes\":[{\"name\":\"secret\",\"source_labels\":[0],\"operation\":\"\"},{\"name\":\"public\",\"source_labels\":[],\"operation\":\"\"},{\"name\":\"out\",\"source_labels\":[],\"operation\":\"If secret is true, output a verbatim copy of public; if secret is false, emit no output. These are all data and control inputs.\"}],\"sinks\":[{\"node\":2,\"forbid\":[0]}]}"
+      ]
+    },
+    {
+      "label": "publish",
+      "hash": "0x1ec0853f63ee3af36e4d3db5c024c141bbfeb11dabf1a2542dd021d73b5f3e63",
+      "method": "publish",
+      "args": [
+        "clean",
+        "43b641e15418f566e571c5515b95189fcdc84a6855cf679c572656eb3f8c2bc3"
+      ]
+    }
+  ],
+  "reads": [
+    {
+      "name": "clean",
+      "file": "network/clean-state.json"
+    },
+    {
+      "name": "branch",
+      "file": "network/branch-state.json"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "commitment": "d9574c0ca7c24d3515cffcc4d95a69c47a2f142186d26f6e6ac1bf3c1a3fec72",
+  "name": "branch",
+  "observed": {
+    "rows": [
+      {
+        "links": [
+          {
+            "kind": "CONTROL",
+            "quote": "If secret is true, output a verbatim copy of public; if secret is false, emit no output."
+          },
+          {
+            "kind": "DATA",
+            "quote": "output a verbatim copy of public"
+          }
+        ],
+        "node": 2
+      }
+    ]
+  },
+  "owner": "0xedf70b8a7588a72e236f47e39ac4a94a67b76e68",
+  "plan": {
+    "labels": [
+      "restricted"
+    ],
+    "nodes": [
+      {
+        "name": "secret",
+        "operation": "",
+        "source_labels": [
+          0
+        ]
+      },
+      {
+        "name": "public",
+        "operation": "",
+        "source_labels": []
+      },
+      {
+        "name": "out",
+        "operation": "If secret is true, output a verbatim copy of public; if secret is false, emit no output. These are all data and control inputs.",
+        "source_labels": []
+      }
+    ],
+    "sinks": [
+      {
+        "forbid": [
+          0
+        ],
+        "node": 2
+      }
+    ]
+  },
+  "proof": {
+    "decision": "LEAK",
+    "definite_labels": [
+      [
+        0
+      ],
+      [],
+      [
+        0
+      ]
+    ],
+    "possible_labels": [
+      [
+        0
+      ],
+      [],
+      [
+        0
+      ]
+    ],
+    "unresolved": [],
+    "violations": [
+      {
+        "label": 0,
+        "path": [
+          0,
+          2
+        ],
+        "sink": 2
+      }
+    ]
+  },
+  "published": false
+}

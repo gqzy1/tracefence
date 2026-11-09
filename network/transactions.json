@@ -1,0 +1,83 @@
+[
+  {
+    "label": "deploy",
+    "hash": "0xf43d2b0d0cc6224908527095a886a1954f7ce3d78379fbb69a34ceb3a3682da1",
+    "method": "deploy",
+    "args": [],
+    "status": "FINALIZED",
+    "result": "MAJORITY_AGREE",
+    "leader_only": false,
+    "execution": "SUCCESS",
+    "votes": {
+      "0x0cf3809a31B0c7E0742d126451aDE1977e3748D2": "agree",
+      "0x2bB088e4E6Fd1faBBd23d93F38D01f28a954A49c": "agree",
+      "0x709a1dDECA594C16AB3864A00Eaa2BB1Cd9b5305": "idle",
+      "0x8f1abcAF0fF10678Af925f83b2Bb8b3534c4b94b": "idle",
+      "0xC65Ec56a1141866951B34D846be8EF433764A48B": "agree"
+    },
+    "receipt_sha256": "091559a947a54b73d4fb3d617b22b09a2ac81f8061cf8f9f170b0802aeb6145c"
+  },
+  {
+    "label": "clean",
+    "hash": "0xb12c1eca9b7e320259f66f0dc368ca087491fa65f305dcb10673a5346d5fff55",
+    "method": "audit",
+    "args": [
+      "clean",
+      "{\"labels\":[\"restricted\"],\"nodes\":[{\"name\":\"secret\",\"source_labels\":[0],\"operation\":\"\"},{\"name\":\"public\",\"source_labels\":[],\"operation\":\"\"},{\"name\":\"out\",\"source_labels\":[],\"operation\":\"Output a verbatim copy of public. Do not read or branch on secret. These are all data and control inputs.\"}],\"sinks\":[{\"node\":2,\"forbid\":[0]}]}"
+    ],
+    "status": "FINALIZED",
+    "result": "MAJORITY_AGREE",
+    "leader_only": false,
+    "execution": "SUCCESS",
+    "votes": {
+      "0x29300188B54F5BFEE91542595611603b4B201008": "agree",
+      "0x2bB088e4E6Fd1faBBd23d93F38D01f28a954A49c": "agree",
+      "0x560FBD37a10bC2B96F118071e922c9106c12Ba1d": "agree",
+      "0x709a1dDECA594C16AB3864A00Eaa2BB1Cd9b5305": "disagree",
+      "0xe83D7241D0FF0f1f808B9ab3cb06dD2565bDc605": "idle"
+    },
+    "receipt_sha256": "e2d78e53c7b0d0016d8983fea0f8434db4b9d0b8003f34944b56cca3727da345"
+  },
+  {
+    "label": "branch",
+    "hash": "0xf1c3d131356a4069a2b5828526f1d5fa2a4a963cf5d756dba558445af2f318b0",
+    "method": "audit",
+    "args": [
+      "branch",
+      "{\"labels\":[\"restricted\"],\"nodes\":[{\"name\":\"secret\",\"source_labels\":[0],\"operation\":\"\"},{\"name\":\"public\",\"source_labels\":[],\"operation\":\"\"},{\"name\":\"out\",\"source_labels\":[],\"operation\":\"If secret is true, output a verbatim copy of public; if secret is false, emit no output. These are all data and control inputs.\"}],\"sinks\":[{\"node\":2,\"forbid\":[0]}]}"
+    ],
+    "status": "FINALIZED",
+    "result": "MAJORITY_AGREE",
+    "leader_only": false,
+    "execution": "SUCCESS",
+    "votes": {
+      "0x1Cd67946A11E6410a3DF1b27d35F4a511e93c882": "agree",
+      "0x29300188B54F5BFEE91542595611603b4B201008": "idle",
+      "0x709a1dDECA594C16AB3864A00Eaa2BB1Cd9b5305": "agree",
+      "0x8f1abcAF0fF10678Af925f83b2Bb8b3534c4b94b": "disagree",
+      "0xC65Ec56a1141866951B34D846be8EF433764A48B": "agree"
+    },
+    "receipt_sha256": "3c21024b198505538af67e9b9fcf1c63217fee7cd059e95593f28c0500f141df"
+  },
+  {
+    "label": "publish",
+    "hash": "0x1ec0853f63ee3af36e4d3db5c024c141bbfeb11dabf1a2542dd021d73b5f3e63",
+    "method": "publish",
+    "args": [
+      "clean",
+      "43b641e15418f566e571c5515b95189fcdc84a6855cf679c572656eb3f8c2bc3"
+    ],
+    "status": "FINALIZED",
+    "result": "MAJORITY_AGREE",
+    "leader_only": false,
+    "execution": "SUCCESS",
+    "votes": {
+      "0x1Cd67946A11E6410a3DF1b27d35F4a511e93c882": "agree",
+      "0x711353514049EAc21213834ADd07eF552aF394E6": "idle",
+      "0x722474B013fA39E5aA8785f927dCeB0e3F89815B": "idle",
+      "0x8f1abcAF0fF10678Af925f83b2Bb8b3534c4b94b": "agree",
+      "0xe1626534791FC675ED813Cc2C89C427866526113": "agree"
+    },
+    "receipt_sha256": "4a4aad42f3785795db2247580ebf9d1cc4a95e27ebeb69607d2f34869ca913db"
+  }
+]

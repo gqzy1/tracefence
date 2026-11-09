@@ -1,0 +1,8 @@
+{
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "address": "0x8C09C7cc7f19a32D63Ada9012DE165c80f59B348",
+  "owner": "0xedf70B8A7588A72e236f47E39AC4A94A67b76e68",
+  "deploy_tx": "0xf43d2b0d0cc6224908527095a886a1954f7ce3d78379fbb69a34ceb3a3682da1",
+  "source_sha256": "c3d9d211c2f1ae66c95e338b59237c17e212249559cafd8e826966f077f506e6"
+}
